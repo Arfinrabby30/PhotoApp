@@ -1,0 +1,1 @@
+web: gunicorn PhotoPro.wsgi --log-file -
