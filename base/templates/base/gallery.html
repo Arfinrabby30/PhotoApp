@@ -22,7 +22,10 @@
 </head>
 
 <body class="m-5">
-
+    {% if user.is_authenticated %}
+    {{request.user}}
+    <a href="{% url 'logout' %}" class="btn btn-outline-dark btn-sm m-1">Logout</a>
+    {% endif %}
     <div class="container">
         <div class="row">
             <div class="col-md-3">
