@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
-@login_required(login_url='login')
+
 def gallery(request):
     category = request.GET.get('category')
     if category == None:
@@ -23,14 +23,14 @@ def gallery(request):
     return render(request, 'base/gallery.html', context)
 
 
-@login_required(login_url='login')
+
 def viewPhoto(request, pk):
     photo = Photo.objects.get(id=pk)
     context = {'photo': photo}
     return render(request, 'base/photo.html', context)
 
 
-@login_required(login_url='login')
+
 def addPhoto(request):
     categories = Category.objects.all()
 
